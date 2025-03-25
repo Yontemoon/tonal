@@ -3,7 +3,7 @@ import useColors from "./hooks/useColors";
 import ColorCard from "./components/color-card/color-card";
 
 function App() {
-  const { colors, toggleColorChange } = useColors();
+  const { colors, toggleColorChange, isGenerating } = useColors();
 
   return (
     <div className="app-container">
@@ -13,7 +13,9 @@ function App() {
         })}
       </div>
       <div className="button-random">
-        <button onClick={toggleColorChange}>Click Me</button>
+        <button onClick={toggleColorChange} disabled={isGenerating}>
+          {isGenerating ? "Generating" : "Click ME"}
+        </button>
       </div>
     </div>
   );
