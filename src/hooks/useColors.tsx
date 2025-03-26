@@ -13,7 +13,6 @@ const useColors = () => {
       setColors(data);
     } catch (error) {
       console.error(error);
-      // setIsGenerating(false);
     } finally {
       setIsGenerating(false);
     }
