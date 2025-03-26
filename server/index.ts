@@ -1,10 +1,12 @@
 import express from "express";
 import { TColors, TFormatColors } from "./types";
 import { COLOR_URL } from "./constant";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -43,3 +45,5 @@ app.get("/colors", async (_req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+module.exports = app;

@@ -1,3 +1,3 @@
-const COLOR_URL = "http://colormind.io/api/";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
-export { COLOR_URL };
+export { API_BASE_URL };
