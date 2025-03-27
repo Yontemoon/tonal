@@ -18,4 +18,6 @@
   right: 0;
   top: 0;
   margin: 1rem;
+  display: flex;
+  gap: 0.5rem;
 }

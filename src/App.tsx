@@ -3,7 +3,21 @@ import useColors from "./hooks/useColors";
 import ColorCard from "./components/color-card/color-card";
 
 function App() {
-  const { colors, toggleColorChange, isGenerating } = useColors();
+  const {
+    colors,
+    toggleColorChange,
+    isGenerating,
+    colorList,
+    setNextColor,
+    setPrevColor,
+    isFirst,
+    isLast,
+  } = useColors();
+
+  // TODO added a next and previous button
+  // TODO Add a like button that is added in local storage
+
+  console.log(colorList);
 
   return (
     <div className="app-container">
@@ -13,6 +27,12 @@ function App() {
         })}
       </div>
       <div className="button-random">
+        <button onClick={setPrevColor} disabled={isFirst}>
+          Previous
+        </button>
+        <button onClick={setNextColor} disabled={isLast}>
+          Next
+        </button>
         <button onClick={toggleColorChange} disabled={isGenerating}>
           {isGenerating ? "Generating" : "Click ME"}
         </button>
