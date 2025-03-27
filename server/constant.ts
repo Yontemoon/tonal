@@ -1,3 +1,3 @@
-const COLOR_URL = "http://colormind.io/api/";
+const COLOR_URL = 'http://colormind.io/api/'
 
-export { COLOR_URL };
+export { COLOR_URL }

@@ -1,12 +1,12 @@
-type TColor = [number, number, number];
+type TColor = [number, number, number]
 
 type TColors = {
-  result: [TColor, TColor, TColor, TColor, TColor];
-};
+  result: [TColor, TColor, TColor, TColor, TColor]
+}
 
 type TFormatColors = {
-  background: TColor;
-  text: TColor;
-};
+  background: TColor
+  text: TColor
+}
 
-export type { TColors, TColor, TFormatColors };
+export type { TColors, TColor, TFormatColors }
