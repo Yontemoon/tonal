@@ -1,5 +1,5 @@
 import express from "express";
-import { TColors, TFormatColors } from "./types";
+import { TColors, TFormatColors } from "@customTypes/index";
 import { COLOR_URL } from "./constant";
 import cors from "cors";
 

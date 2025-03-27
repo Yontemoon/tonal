@@ -1,5 +1,5 @@
 import "./color-card.css";
-import { TFormatColors } from "../../lib/types";
+import { TFormatColors } from "@customType/index";
 
 type PropTypes = {
   colors: TFormatColors;

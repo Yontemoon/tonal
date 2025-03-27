@@ -1,5 +1,5 @@
 import React from "react";
-import { TFormatColors } from "../lib/types";
+import { TFormatColors } from "@customType/index";
 
 const useColors = () => {
   const [colors, setColors] = React.useState<TFormatColors[] | null>(null);

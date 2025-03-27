@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": "../",
+    "paths": {
+      "@customTypes/*": ["./types/*"]
+    },
     "target": "ES6",
     "module": "CommonJS",
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "../",
     "strict": true,
     "esModuleInterop": true
   }
