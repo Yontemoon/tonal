@@ -9,7 +9,7 @@ function App() {
     colors,
     toggleColorChange,
     isGenerating,
-    colorList,
+    // colorList,
     setNextColor,
     setPrevColor,
     isFirst,
