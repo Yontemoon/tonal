@@ -1,5 +1,7 @@
 import "./App.css";
 import useColors from "./hooks/useColors";
+import useLocalColors from "./hooks/useLocalColor";
+import useKeybinds from "./hooks/useKeybinds";
 import ColorCard from "./components/color-card/color-card";
 
 function App() {
@@ -14,10 +16,8 @@ function App() {
     isLast,
   } = useColors();
 
-  // TODO added a next and previous button
-  // TODO Add a like button that is added in local storage
-
-  console.log(colorList);
+  const [storage, addStorage] = useLocalColors();
+  useKeybinds();
 
   return (
     <div className="app-container">
@@ -27,6 +27,16 @@ function App() {
         })}
       </div>
       <div className="button-random">
+        <button
+          disabled={storage?.find((s) => s === colors) ? true : false}
+          onClick={() => {
+            if (colors) {
+              addStorage(colors);
+            }
+          }}
+        >
+          Like
+        </button>
         <button onClick={setPrevColor} disabled={isFirst}>
           Previous
         </button>
