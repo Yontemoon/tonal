@@ -1,7 +1,7 @@
 .button-container {
   height: 50px;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   opacity: 100%;
   font-size: larger;
   font-weight: 500;
@@ -13,8 +13,19 @@
   justify-items: center;
   justify-content: center;
   animation-duration: 500ms;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
 }
 
-.button-container:hover {
-  background-color: aqua;
+.button-container:disabled {
+  opacity: 50%; /* Reduce opacity to indicate disabled state */
+  background-color: #ccc; /* Light gray background */
+  cursor: not-allowed; /* Show "not allowed" cursor */
+  color: #666; /* Muted text color */
+  box-shadow: none; /* Remove any shadow effects */
+}
+
+.button-container:disabled:hover {
+  background-color: #ccc;
 }

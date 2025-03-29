@@ -16,7 +16,9 @@ const ColorCard = ({ colors }: PropTypes) => {
         background: styledBackgroundColor,
         color: styledTextColor,
       }}>
-      #{colors.background[0]}, {colors.background[1]}, {colors.background[2]}
+      <p className="color-rgb">
+        #{colors.background[0]} {colors.background[1]} {colors.background[2]}
+      </p>
     </div>
   )
 }

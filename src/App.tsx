@@ -6,10 +6,10 @@ import useKeybinds from './hooks/useKeybinds'
 import ColorCard from './components/color-card/color-card'
 import Button from './components/button/button'
 import { TColor } from '@customType/index'
+import useDialog from './hooks/useDialog'
+import LikeDialog from './components/liked-dialog/liked-dialog'
 
 function App() {
-  // TODO - Add prettier?
-
   const {
     colors,
     toggleColorChange,
@@ -24,6 +24,7 @@ function App() {
   const [storage, addStorage] = useLocalColors()
   const [colorsShown, setColorsShown] = React.useState(5)
   const [filteredColors, setFilteredColors] = React.useState(colors)
+  const { openDialog, closeDialog, dialogRef } = useDialog()
 
   useEffect(() => {
     const slicedColors = colors?.slice(0, colorsShown)
@@ -43,6 +44,7 @@ function App() {
       setNextColor()
     },
   })
+
   const buttonInfo = colors
     ? colors[1]
     : {
@@ -71,6 +73,9 @@ function App() {
             }
           }}>
           Like
+        </Button>
+        <Button colors={buttonInfo} onClick={openDialog}>
+          Show Likes
         </Button>
         <Button colors={buttonInfo} onClick={() => setColorsShown(2)}>
           2
@@ -101,6 +106,9 @@ function App() {
           Next
         </Button>
       </div>
+      {storage && (
+        <LikeDialog ref={dialogRef} closed={closeDialog} likes={storage} />
+      )}
     </div>
   )
 }
